@@ -255,6 +255,8 @@ Label 3: -0.18800961836252097
 Label 4: -0.2101397465507541
 ```
 
+Which means our prediction for class of this document is label 2 (largets positive score).
+
 ### Accuracy
 
 Accuracy is calculated using the formula below:
