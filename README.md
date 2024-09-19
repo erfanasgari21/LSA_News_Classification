@@ -200,6 +200,12 @@ We compute the average document representation for each label in the latent spac
 
 As observed, the 1st LSI component roughly captures the concept of the second label, Technology, the 2nd component captures the 0 label, Politics, and the 3rd component corresponds to the label 2, Sports. This aligns with the previous heatmap, where the term 'digital' had a magnitude of 0.25 for the first component, and 'win' had a magnitude of 0.31 for the third component.
 
+We can also examine how a word correlates with different labels. For instance, the word 'mobile' shows the following similarities with the average vector for each label:
+
+![word vs labels barchart](media/word_vs_labels.png)
+
+It predictably has the largest positive correlation with label 2: Technology.
+
 ## Similarity between Documents and Words
 
 Since each document is now represented by a vector in the latent space, capturing a combination of concepts, we calculate the **Cosine Similarity** between these document vectors and each word in the vocabulary. The results for a particular document are displayed in a wide bar chart. Below the chart, we also show the frequency of each word in the document, allowing for a comparison between the two charts.
@@ -222,8 +228,39 @@ In summary, searching in the latent space can efficiently identify relevant docu
 
 ## Classification
 
+We predict the label for each document by first transforming it using a Bag of Words model, followed by standardization and Truncated SVD. We then calculate the cosine similarity between the document’s latent vector and the average vector of each label, reporting the label with the highest alignment score as the predicted label.
+
+```python
+def label_alignment_scores(document_latent_vector, lsi_df):
+   
+    label_scores = {}
+    
+    for label in lsi_df['Label'].unique():
+        label_documents = lsi_df[lsi_df['Label'] == label].drop(columns=['Label'])
+        average_latent_vector = label_documents.mean(axis=0)
+        similarity_score = cosine_similarity([document_latent_vector], [average_latent_vector])[0][0]
+        label_scores[label] = similarity_score
+
+    return label_scores
+```
+
+an example output of this function for a document is:
+
+```
+Alignment Scores:
+Label 0: -0.3000769868083389
+Label 1: -0.3474749622033501
+Label 2: 0.961012408891168
+Label 3: -0.18800961836252097
+Label 4: -0.2101397465507541
+```
+
+### Accuracy
+
+Accuracy is calculated using the formula below:
 
 $$
 Accuracy=\frac{Correct \ Predictions}{Total \ Predictions}
 $$
 
+`accuracy = 0.769`
