@@ -1,4 +1,4 @@
-# LSA: Text Classification
+# LSA: News Classification
 
 *Linear Algebra (ECE) | Spring 2023 | Dr. Sarafraz | University of Tehran*
 
@@ -6,7 +6,7 @@
 
 ![cover image](media/cover.png)
 
-This project applies Latent Semantic Indexing (LSI) to classify news articles into five categories based on their semantic content. The process involves text preprocessing steps, constructing a Bag of Words, applying Truncated Singular Value Decomposition (TruncatedSVD) to reduce the dimensionality of the term-document matrix and capture the most relevant semantic features. Students will then analyze and compare documents using similarity metrics such as Cosine Similarity and Euclidean Distance to group articles by topic.
+This project applies Latent Semantic Analysis (LSA) to classify news articles into five categories based on their semantic content. The process involves text preprocessing steps, constructing a Bag of Words, applying Truncated Singular Value Decomposition (TruncatedSVD) to reduce the dimensionality of the term-document matrix and capture the most relevant semantic features. Students will then analyze and compare documents using similarity metrics such as Cosine Similarity and Euclidean Distance to group articles by topic.
 
 #### Objectives
 - To preprocess textual data using techniques like Bag of Words and understand TF-IDF for term weighting.
@@ -71,9 +71,9 @@ The **elbow point** refers to a point on the curve that plots the cumulative exp
 
 To calculate the **reconstruction error** in Truncated SVD, we compare the original matrix $`A`$ with the reconstructed matrix $`A_c`$, which is formed using only the top $`c`$ singular values and their corresponding vectors. The reconstruction error can be measured as the Frobenius norm of the difference between the original matrix and the reconstructed matrix:
 
-$$
-\text{Reconstruction Error} = \| A - A_c \|_F =  \sqrt{\sum_{i=c+1}^{r} \sigma_i^2 }
-$$
+```math
+\text{Reconstruction Error} = \| A - A_c \|_F =  \sqrt{ \sum_{i=c+1}^{r} \sigma_i^2 }
+```
 
 Here, $` \sigma_i`$ are the singular values of matrix $`A`$, and $`r`$ is the rank of the full matrix. This formula captures how much information is lost by truncating the lower singular values.
 
@@ -112,9 +112,9 @@ Next, we standardized the bag-of-words matrix by centering and scaling each docu
 
 The standardization for each element $` f_{ij} `$ in the matrix is performed using the following formula:
 
-$$
+```math
 f'_{ij} = \frac{f_{ij} - \mu_j}{\sigma_j}
-$$
+```
 
 Where:
 - $` \mu_j `$ is the mean frequency of the $` j `$-th word across all documents,
