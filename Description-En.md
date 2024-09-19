@@ -28,7 +28,7 @@ Machines face significant challenges in understanding words because they do not 
 
 _photo from [NLP: Bag of words](https://ogre51.medium.com/nlp-explain-bag-of-words-3b9fc4f211e8) by Rahul S_
 
-One basic approach to creating such embeddings is the **Bag of Words (BoW)** model. In this method, we create a matrix $$ B = [f_{i,j}] $$, where $$ f_{i,j} $$ represents the frequency of word _j_ in document _i_. This matrix captures how often each word appears in each document, without considering the order of the words. While simple, BoW is a powerful way to transform textual data into a format that machines can work with, laying the foundation for more complex analyses, such as document classification or similarity comparison.
+One basic approach to creating such embeddings is the **Bag of Words (BoW)** model. In this method, we create a matrix $` B = [f_{i,j}] `$, where $` f_{i,j} `$ represents the frequency of word _j_ in document _i_. This matrix captures how often each word appears in each document, without considering the order of the words. While simple, BoW is a powerful way to transform textual data into a format that machines can work with, laying the foundation for more complex analyses, such as document classification or similarity comparison.
 
 ## Latent Semantic Analysis
 
@@ -67,7 +67,7 @@ The data can be downloaded from [here](https://www.kaggle.com/datasets/tanishqdu
 
 10. Construct a **Bag of Words (BoW)** matrix and count the occurrence of each word in every document. Create this matrix based on the words in `words.csv`.
 
-    Let $$ B = [f_{i,j}] $$ where $$ f_{i,j} $$ is the frequency of word _j_ in document _i_.
+    Let $` B = [f_{i,j}] `$ where $` f_{i,j} `$ is the frequency of word _j_ in document _i_.
 
 > [!NOTE]
 > Separate the first 2000 rows of data from the remaining rows. Set aside the remaining 225 rows as **test data** and do not use them until the last question. Apply the tasks requested in the upcoming questions only to the first 2000 rows.
