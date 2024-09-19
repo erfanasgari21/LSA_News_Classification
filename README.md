@@ -16,7 +16,8 @@ This project applies Latent Semantic Indexing (LSI) to classify news articles in
 - To gain hands-on experience with text classification and word embeddings in Natural Language Processing (NLP).
 
 #### Links
-- [Project Description (En)](Description-En.pdf)
+- [Project Description (En)](Description-En.md)
 - [Original Description (Fa)](Description-Fa.pdf)
 - [Implementation Code (ipynb)](Code.ipynb)
+
 
