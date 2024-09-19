@@ -1,5 +1,5 @@
 
-# LSA: Text Classification
+# LSA: News Classification
 
 *Linear Algebra (ECE) | Spring 2023 | Dr. Sarafraz | University of Tehran*
 
