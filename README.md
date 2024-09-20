@@ -85,7 +85,7 @@ A **dataset** of 2,225 short English news articles on 5 topics is provided for a
 
 ![labels frequency](media/labels_barchart.png)
 
-Classes:
+*where* Classes are:
 
 0. Politics
 1. Sport
