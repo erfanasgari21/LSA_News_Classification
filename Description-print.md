@@ -67,7 +67,7 @@ The data can be downloaded from [here](https://www.kaggle.com/datasets/tanishqdu
 
 10. Construct a **Bag of Words (BoW)** matrix and count the occurrence of each word in every document. Create this matrix based on the words in `words.csv`.
 
-    Let $$ B = [f_{i,j}] $$ where $$ f_{i,j} $$ is the frequency of word _j_ in document _i_.
+    Let $B = [f_{i,j}]$ where $f_{i,j}$ is the frequency of word _j_ in document _i_.
 
 > [!NOTE]
 > Separate the first 2000 rows of data from the remaining rows. Set aside the remaining 225 rows as **test data** and do not use them until the last question. Apply the tasks requested in the upcoming questions only to the first 2000 rows.
